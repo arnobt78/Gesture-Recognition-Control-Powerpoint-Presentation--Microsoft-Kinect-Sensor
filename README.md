@@ -1,11 +1,10 @@
+## Gesture-Recognition-Control-Powerpoint-Presentation
 
 <img width="400" alt="Screenshot 2024-09-09 at 20 36 26" src="https://github.com/user-attachments/assets/a7ccf8be-49a6-4c42-88bd-6d05e0035546"> <img width="418" alt="Screenshot 2024-09-09 at 20 46 36" src="https://github.com/user-attachments/assets/21a60c47-d1be-442c-afc8-497243e8e2bd">
 
-## Gesture-Recognition-Control-Powerpoint-Presentation
-
 Gesture Recognition is an R&D project to control Microsoft Powerpoint while presenting on a large screen, using the Microsoft Kinect Sensor, C# and Kinect SDK. Using their right or left hand, the presenter can slide to the next or previous page. They can also zoom in or out by fisting their hand, and they can play or pause the presentation by displaying all or none of their fingers.
 
-This project shows how to use the Kinect SDK to do basic gesture recognition to control PowerPoint.
+This project displays how to use the Kinect SDK to do basic gesture recognition to control PowerPoint.
 
 ## Requirements
 
@@ -58,8 +57,3 @@ There is a four second delay after starting the program before the speech recogn
 
 2.	The gesture is triggered based upon the distance between the head and the hands, so you might accidentally trigger the gesture if you put your arms out, or bend over to pick something up perhaps. 
 
-## License
-
-The source code is made available under the MIT License. 
-
-http://kinectpowerpoint.codeplex.com/license
