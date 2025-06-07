@@ -1,59 +1,155 @@
-## Gesture-Recognition-Control-Powerpoint-Presentation
+# Gesture Recognition Control for PowerPoint Presentation using Microsoft Kinect Sensor
 
 <img width="400" alt="Screenshot 2024-09-09 at 20 36 26" src="https://github.com/user-attachments/assets/a7ccf8be-49a6-4c42-88bd-6d05e0035546"> <img width="418" alt="Screenshot 2024-09-09 at 20 46 36" src="https://github.com/user-attachments/assets/21a60c47-d1be-442c-afc8-497243e8e2bd">
 
-Gesture Recognition is an R&D project to control Microsoft Powerpoint while presenting on a large screen, using the Microsoft Kinect Sensor, C# and Kinect SDK. Using their right or left hand, the presenter can slide to the next or previous page. They can also zoom in or out by fisting their hand, and they can play or pause the presentation by displaying all or none of their fingers.
+---
 
-This project displays how to use the Kinect SDK to do basic gesture recognition to control PowerPoint.
+## Project Overview
+
+This project demonstrates a gesture recognition system to control Microsoft PowerPoint presentations using the Microsoft Kinect Sensor and C#, leveraging the Kinect SDK. The system allows presenters to control slides with intuitive hand gestures or voice commands, enabling touchless navigation without the need for keyboard or clickers.
+
+## Table of Contents
+
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Technology Stack](#technology-stack)
+- [Requirements](#requirements)
+- [Installation & Setup](#installation--setup)
+- [Usage Instructions](#usage-instructions)
+- [Gesture Controls](#gesture-controls)
+- [Speech Recognition](#speech-recognition)
+- [Limitations](#limitations)
+- [Keywords](#keywords)
+- [License](#license)
+
+---
+
+## Features
+
+- **Gesture-based slide navigation:** Move forward or backward in a PowerPoint presentation by extending your right or left arm.
+- **Real-time visual feedback:** Application window displays your tracked head and hand positions with animated circles.
+- **Speech recognition:** Control the UI and visual feedback using voice commands.
+- **Multi-application support:** Gestures send key events to any application, not limited to PowerPoint.
+- **Easy setup and operation:** Simple requirements and step-by-step instructions.
+
+---
+
+## Project Structure
+
+The repository contains the following key components:
+
+- `src/` — Main application source code (C#)
+- `bin/` — Compiled binaries after build
+- `README.md` — Project documentation (this file)
+- `Resources/` — Supporting files, assets, and images
+- `.sln` / `.csproj` — Visual Studio solution/project files
+
+*(Your actual directory structure may vary depending on how you organize your code.)*
+
+---
+
+## Technology Stack
+
+- **Programming Language:** C#
+- **Framework:** .NET Framework (Windows)
+- **Hardware:** Microsoft Kinect Sensor (v1)
+- **SDK:** Kinect for Windows SDK v1.7
+- **Optional:** Microsoft Office PowerPoint (for controlling slides)
+
+---
 
 ## Requirements
 
--	Kinect for Windows SDK v1.7
+- Microsoft Kinect Sensor for Windows
+- Kinect for Windows SDK v1.7
+- Windows PC (compatible with Kinect SDK)
+- Optional: Microsoft Office PowerPoint
 
-Optional:
+---
 
--	Microsoft Office PowerPoint 
+## Installation & Setup
 
-## History:
+1. **Install the Kinect SDK:**
+   - Download and install [Kinect for Windows SDK v1.7](https://www.microsoft.com/en-us/download/details.aspx?id=40278)
+   - Plug in your Kinect Sensor and ensure it is recognized by Windows.
 
-v1.2 Updated for Kinect SDK v1.7. 
+2. **Clone this repository:**
+   ```bash
+   git clone https://github.com/arnobt78/Gesture-Recognition-Control-Powerpoint-Presentation--Microsoft-Kinect-Sensor.git
+   cd Gesture-Recognition-Control-Powerpoint-Presentation--Microsoft-Kinect-Sensor
+   ```
 
-v1.1 Now updated for Kinect SDK v1.0. Speech recognition is on by default.
+3. **Open the project in Visual Studio:**
+   - Open the `.sln` file from the root directory.
 
-v1.0 Initial version.
+4. **Build the solution:**
+   - Restore any missing NuGet packages if prompted.
+   - Build the solution (`Build > Build Solution`).
 
-## Usage
+5. **Run the application:**
+   - Connect your Kinect sensor.
+   - Set your PowerPoint presentation (optional).
+   - Start the application from Visual Studio or by running the compiled binary.
 
-1.	Compile and run the application 
+---
 
-2.	Point the Kinect at you and stand at least five feet away 
+## Usage Instructions
 
-3.	You can see yourself in the application window and the three circles will track your head and hands. 
+1. **Stand in front of Kinect:** Position yourself at least five feet away from the sensor.
+2. **Track your movements:** The application window will display your image and three tracking circles (head, left hand, right hand).
+3. **Control slides with gestures:**
+   - **Right arm extended**: "Next Slide" (sends right arrow key)
+   - **Left arm extended**: "Previous Slide" (sends left arrow key)
+4. **Present your PowerPoint:** Make PowerPoint the foreground application. Gestures will control slide navigation.
+5. **Visual feedback:** The ellipses grow and change color when your hand exceeds the threshold (45 centimeters from head). Only one gesture is activated at a time.
 
-4.	Extend your right arm to activate the "right" or "forward" gesture. Extend your left arm to active the "left" or "back" gesture. These gestures will send a right or left arrow key to the foreground application, respectively. 
+---
 
-5.	Run your PowerPoint show so PowerPoint is the foreground application, and the right and left gestures will go forward and back in your deck.
+## Gesture Controls
 
-The ellipses grow and change color when your hand exceeds the threshold of 45 centimeters. The gestures will only activate once as your hand exceeds the threshold, and only one of the gestures can be active at once. You must bring your hand back closer to your body to activate the gesture a second time.
+- **Right Arm Out**: Advances to the next slide (`Right Arrow`)
+- **Left Arm Out**: Moves to the previous slide (`Left Arrow`)
+- **Gesture Activation:** Gesture triggers only when the hand moves beyond a certain threshold from the head position. Each gesture only fires once per activation.
 
-The gestures will also work for any other application. For example, open Notepad and type some text then use the gestures to move the cursor left or right one character at a time.
+> **Tip:** Gestures also work in other applications. For example, you can move the cursor in Notepad using gestures.
 
-## Speech recognition
+---
 
-The speech recognizer is set up to recognize and respond to the following commands: 
+## Speech Recognition
 
--	computer show window 
+The application supports the following voice commands:
 
--	computer hide window 
+- `computer show window`
+- `computer hide window`
+- `computer show circles`
+- `computer hide circles`
 
--	computer show circles 
+*There is a four-second delay after the program starts before speech recognition is activated.*
 
--	computer hide circles
-
-There is a four second delay after starting the program before the speech recognizer will respond.
+---
 
 ## Limitations
-1.	There is currently no way to activate embedded videos, so you should add a PowerPoint animation so the video starts when you push the right arrow key.
 
-2.	The gesture is triggered based upon the distance between the head and the hands, so you might accidentally trigger the gesture if you put your arms out, or bend over to pick something up perhaps. 
+1. **Embedded video activation:** Cannot start embedded videos in PowerPoint directly. Use animations to trigger videos with arrow keys.
+2. **Gesture sensitivity:** Gestures are based on the distance between your head and hands. Unintended movements (e.g., bending down, stretching) may trigger gestures accidentally.
+3. **Kinect SDK version:** Only works with Kinect SDK v1.7 (may not be compatible with newer hardware or SDKs).
 
+---
+
+## Keywords
+
+`Gesture Recognition`, `Kinect`, `PowerPoint`, `C#`, `Kinect SDK`, `Human-Computer Interaction`, `Presentation Control`, `Speech Recognition`, `Touchless UI`, `Computer Vision`
+
+---
+
+## License
+
+This project is for research and demonstration purposes. Please refer to the LICENSE file (if provided) for usage details.
+
+---
+
+*Screenshots:*
+
+Look above
+
+---
